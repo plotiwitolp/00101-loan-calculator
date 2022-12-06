@@ -20,5 +20,6 @@ $(document).ready(function () {
     $('.loan-calculator__loan-amount').val(100000);
     $('.loan-calculator__months').val(50);
     $('.loan-calculator__result').val(2700);
+    $('.loan-calculator__err').hide();
   }
 });
