@@ -150,11 +150,25 @@ body {
 .loan-calculator__item-calculate,
 .loan-calculator__item-reset {
   text-align: center;
-  border: 1px solid #d9d9d9;
   padding: 15px 7px;
   margin: 0 50px;
   cursor: pointer;
+}
+
+.number-minus,
+.number-plus,
+.loan-calculator__item-calculate,
+.loan-calculator__item-reset {
   border-radius: 3px;
+  -webkit-transition: 0.27s;
+  transition: 0.27s;
+}
+.number-minus:hover,
+.number-plus:hover,
+.loan-calculator__item-calculate:hover,
+.loan-calculator__item-reset:hover {
+  -webkit-box-shadow: 0 0 7px rgb(137, 137, 137);
+          box-shadow: 0 0 7px rgb(137, 137, 137);
 }
 
 .loan-calculator__err {
@@ -208,8 +222,9 @@ body {
   border: none;
   font-size: 16px;
   font-weight: 600;
-  width: 30px;
-  height: 100%;
+  width: 40px;
+  height: 40px;
+  margin: 0 40px;
   cursor: pointer;
 }
 
