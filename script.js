@@ -6,20 +6,18 @@ $(document).ready(function () {
   let loanAmountMax = $('.loan-calculator__loan-amount').attr('max');
   let monthsMin = $('.loan-calculator__months').attr('min');
   let monthsMax = $('.loan-calculator__months').attr('max');
-
   let result = 0;
+
   function calc() {
     let rate = $('.loan-calculator__rate').val();
     let loanAmount = $('.loan-calculator__loan-amount').val();
     let months = $('.loan-calculator__months').val();
     result = rate * loanAmount + loanAmount / months;
-
     if (Number.isInteger(result) & (+loanAmount >= +loanAmountMin) & (+loanAmount <= +loanAmountMax) & (+months >= +monthsMin) & (+months <= +monthsMax)) {
       $('.loan-calculator__err').hide();
     } else {
       $('.loan-calculator__err').show();
     }
-
     $('.loan-calculator__result').val(result);
   }
 
@@ -30,4 +28,12 @@ $(document).ready(function () {
     $('.loan-calculator__result').val(2700);
     $('.loan-calculator__err').hide();
   }
+
+  //   function doFormatted(sum) {
+  //     let formatted = sum.toLocaleString('en', {
+  //       minimumFractionDigits: 0,
+  //       maximumFractionDigits: 0,
+  //     });
+  //     return formatted;
+  //   }
 });
