@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="loan-calculator">
+      <div class="loan-calculator__header">
+        <h1>LOAN CALCULATOR</h1>
+      </div>
+      <div class="loan-calculator__body">
+        <div class="loan-calculator__item">
+          <div class="loan-calculator__item-title">Interest Rate</div>
+          <div class="loan-calculator__item-count number">
+            <button class="number-minus" type="button" onclick="this.nextElementSibling.stepDown();">-</button>
+            <input class="loan-calculator__rate" type="number" value="0.007" step="0.001" />
+            <button class="number-plus" type="button" onclick="this.previousElementSibling.stepUp();">+</button>
+          </div>
+        </div>
+        <div class="loan-calculator__item">
+          <div class="loan-calculator__item-title">Loan Amount</div>
+          <!-- between 1000 and 1 million in multiple of 1,000 -->
+          <div class="loan-calculator__item-count number">
+            <button class="number-minus" type="button" onclick="this.nextElementSibling.stepDown();">-</button>
+            <input class="loan-calculator__loan-amount" type="number" value="100000" min="1000" max="1000000" step="1000" />
+            <button class="number-plus" type="button" onclick="this.previousElementSibling.stepUp();">+</button>
+          </div>
+        </div>
+        <div class="loan-calculator__item">
+          <div class="loan-calculator__item-title">No of instalments(Months)</div>
+          <!-- maximum 200 months -->
+          <div class="loan-calculator__item-count number">
+            <button class="number-minus" type="button" onclick="this.nextElementSibling.stepDown();">-</button>
+            <input class="loan-calculator__months" type="number" value="50" min="0" max="200" />
+            <button class="number-plus" type="button" onclick="this.previousElementSibling.stepUp();">+</button>
+          </div>
+        </div>
+        <div class="loan-calculator__item">
+          <div class="loan-calculator__item-title">Monthly intalment(RS.)</div>
+          <!-- displayed only if whole number  -->
+          <div class="loan-calculator__item-count">
+            <span class="loan-calculator__err">Monthly instalment should be a whole number. Please modify either Loan amount or No. of Instalments.</span>
+            <input class="loan-calculator__result" type="number" value="2700" readonly />
+          </div>
+        </div>
+      </div>
+      <div class="loan-calculator__footer">
+        <div class="loan-calculator__item">
+          <div class="loan-calculator__item-calculate">CALCULATE</div>
+          <div class="loan-calculator__item-reset">RESET</div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
